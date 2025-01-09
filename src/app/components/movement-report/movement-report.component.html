@@ -1,0 +1,24 @@
+<!-- movement-report.component.html -->
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title mb-4">Generar Reporte de Movimientos</h5>
+      <form [formGroup]="dateForm" (ngSubmit)="generateReport()">
+        <div class="row g-3">
+          <div class="col-md-5">
+            <label class="form-label">Fecha Inicio</label>
+            <input type="date" class="form-control" formControlName="startDate">
+          </div>
+          <div class="col-md-5">
+            <label class="form-label">Fecha Fin</label>
+            <input type="date" class="form-control" formControlName="endDate">
+          </div>
+          <div class="col-md-2">
+            <label class="form-label">&nbsp;</label>
+            <button class="btn btn-primary w-100" type="submit" [disabled]="!dateForm.valid">
+              Generar PDF
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

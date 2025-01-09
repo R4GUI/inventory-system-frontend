@@ -1,0 +1,33 @@
+.table-container {
+    padding: 20px;
+  }
+  
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  mat-form-field {
+    width: 400px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-column-actions {
+    width: 80px;
+    text-align: center;
+  }
+  
+  .negative {
+    color: red;
+    font-weight: bold;
+  }

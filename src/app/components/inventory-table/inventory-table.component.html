@@ -1,0 +1,80 @@
+<div class="mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="d-flex gap-2">
+        <button class="btn btn-primary" (click)="openAddModal()">
+          <i class="fas fa-plus me-2"></i>Nuevo Producto
+        </button>
+        <button class="btn btn-success" (click)="exportToExcel()">
+          <i class="fas fa-file-excel me-2"></i>Exportar Excel
+        </button>
+      </div>
+      <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Buscar productos..." (input)="applyFilter($event)">
+      </div>
+    </div>
+  
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>UM</th>
+            <th>Peso</th>
+            <th>Tipo</th>
+            <th class="text-end">Cantidad</th>
+            <th class="text-end">Precio Unit.</th>
+            <th class="text-end">Valor</th>
+            <th class="text-end">Peso Total</th>
+            <th class="text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of filteredInventory">
+            <td>{{item.productos}}</td>
+            <td>{{item.um}}</td>
+            <td>{{item.peso}}</td>
+            <td>{{item.tipo}}</td>
+            <td class="text-end" [class.text-danger]="item.cantidad < 0">{{item.cantidad}}</td>
+            <td class="text-end">${{item.precio_unit}}</td>
+            <td class="text-end">${{item.valor}}</td>
+            <td class="text-end">{{item.peso_total}}</td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-outline-primary" (click)="openMovementModal(item)">
+                <i class="fas fa-exchange-alt"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Modal Nuevo Producto -->
+  <div class="modal fade" id="addProductModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Nuevo Producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <app-add-product-dialog></app-add-product-dialog>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Movimiento -->
+  <div class="modal fade" id="movementModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Registrar Movimiento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <app-movement-dialog [product]="selectedProduct"></app-movement-dialog>
+        </div>
+      </div>
+    </div>
+  </div>

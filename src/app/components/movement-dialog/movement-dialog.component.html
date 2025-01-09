@@ -1,0 +1,37 @@
+<form [formGroup]="movementForm" (ngSubmit)="onSubmit()" *ngIf="product">
+  <div class="card mb-3">
+    <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-muted">Detalles del Producto</h6>
+      <p class="mb-1"><strong>Producto:</strong> {{product.productos}}</p>
+      <p class="mb-1"><strong>Peso:</strong> {{product.peso}} {{product.um}}</p>
+      <p class="mb-0"><strong>Existencia actual:</strong> {{product.cantidad}}</p>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Tipo de Movimiento</label>
+    <select class="form-select" formControlName="tipo">
+      <option value="entrada">Entrada</option>
+      <option value="salida">Salida</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Cantidad</label>
+    <input type="number" class="form-control" formControlName="cantidad" step="0.01">
+    <div class="invalid-feedback" *ngIf="movementForm.get('cantidad')?.errors?.['required'] && 
+         movementForm.get('cantidad')?.touched">
+      La cantidad es requerida
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Peso</label>
+    <input type="number" class="form-control" [value]="product.peso" disabled>
+  </div>
+
+  <div class="d-flex justify-content-end gap-2">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!movementForm.valid">Registrar</button>
+  </div>
+</form>
