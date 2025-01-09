@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class InventoryService {
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = 'https://nvientory-system-backe-production.up.railway.app/api';
 
   constructor(private http: HttpClient) { }
 
