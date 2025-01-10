@@ -1,24 +1,41 @@
-<!-- movement-report.component.html -->
 <div class="card">
-    <div class="card-body">
-      <h5 class="card-title mb-4">Generar Reporte de Movimientos</h5>
-      <form [formGroup]="dateForm" (ngSubmit)="generateReport()">
-        <div class="row g-3">
-          <div class="col-md-5">
-            <label class="form-label">Fecha Inicio</label>
-            <input type="date" class="form-control" formControlName="startDate">
-          </div>
-          <div class="col-md-5">
-            <label class="form-label">Fecha Fin</label>
-            <input type="date" class="form-control" formControlName="endDate">
-          </div>
-          <div class="col-md-2">
-            <label class="form-label">&nbsp;</label>
-            <button class="btn btn-primary w-100" type="submit" [disabled]="!dateForm.valid">
-              Generar PDF
-            </button>
-          </div>
+  <div class="card-body">
+    <h5 class="card-title mb-4">Reporte de Movimientos</h5>
+    <form [formGroup]="dateForm">
+      <div class="mb-3">
+        <label class="form-label">Fecha Inicio</label>
+        <input type="date" 
+               class="form-control" 
+               formControlName="startDate"
+               [min]="minDate"
+               [max]="maxDate">
+        <div class="form-text text-muted">
+          La fecha debe ser desde 2025 en adelante
         </div>
-      </form>
-    </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Fecha Fin</label>
+        <input type="date" 
+               class="form-control" 
+               formControlName="endDate"
+               [min]="dateForm.get('startDate')?.value || minDate"
+               [max]="maxDate">
+        <div class="form-text text-muted">
+          La fecha no puede ser posterior a hoy
+        </div>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" 
+                (click)="previewReport()" 
+                [disabled]="!dateForm.valid">
+          <i class="fas fa-eye me-2"></i>Visualizar Reporte
+        </button>
+        <button class="btn btn-success" 
+                (click)="generateReport()" 
+                [disabled]="!dateForm.valid">
+          <i class="fas fa-download me-2"></i>Descargar PDF
+        </button>
+      </div>
+    </form>
   </div>
+</div>

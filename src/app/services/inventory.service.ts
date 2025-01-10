@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class InventoryService {
   private apiUrl = 'https://nventory-system-backend-production.up.railway.app/api';
-
+  // private apiUrl = 'http://localhost:3000/api';
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<any[]> {

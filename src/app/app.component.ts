@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'inventario-client';
+  logoPath = '../assets/logo_altamontanas.png';
 }
+

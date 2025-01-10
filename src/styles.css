@@ -1,5 +1,5 @@
 /* Estilos globales */
-body {
+/* body {
     background-color: #f8f9fa;
 }
 
@@ -19,4 +19,175 @@ body {
 
 .invalid-feedback {
     display: block;
+} */
+
+/* Colores principales */
+:root {
+    --color-primary: #FF5722; /* Naranja */
+    --color-secondary: #F44336; /* Rojo */
+    --color-dark: #212121; /* Negro */
+    --color-light: #FFFFFF; /* Blanco */
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F5F5;
+  }
+  
+  /* Estilos de la barra de navegación */
+  .navbar {
+    background-color: var(--color-dark);
+  }
+  
+  .navbar-brand {
+    color: var(--color-light);
+    font-weight: bold;
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .btn-outline-light {
+    color: var(--color-light);
+    border-color: var(--color-light);
+  }
+  
+  .btn-outline-light:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  
+  /* Estilos de los botones */
+  .btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+  }
+  
+  .btn-success {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+  }
+  
+  .btn-success:hover {
+    background-color: #388E3C;
+    border-color: #388E3C;
+  }
+  
+  /* Estilos de las tablas */
+  .table {
+    background-color: var(--color-light);
+  }
+  
+  .table thead th {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+  }
+  
+  /* Estilos de los formularios */
+  .form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.2rem rgba(255, 87, 34, 0.25);
+  }
+  
+  /* Estilos de los modales */
+  .modal-header {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+  }
+  
+  .modal-title {
+    font-weight: bold;
+  }
+/* Colores principales */
+:root {
+  --color-primary: #FF5722; /* Naranja */
+  --color-secondary: #F44336; /* Rojo */
+  --color-dark: #212121; /* Negro */
+  --color-light: #FFFFFF; /* Blanco */
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F5F5;
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+  background-color: var(--color-dark);
+}
+
+.navbar-brand {
+  color: var(--color-light);
+  font-weight: bold;
+}
+
+.navbar-brand img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.btn-outline-light {
+  color: var(--color-light);
+  border-color: var(--color-light);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* Estilos de los botones */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.btn-success:hover {
+  background-color: #388E3C;
+  border-color: #388E3C;
+}
+
+/* Estilos de las tablas */
+.table {
+  background-color: var(--color-light);
+}
+
+.table thead th {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+/* Estilos de los formularios */
+.form-control:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(255, 87, 34, 0.25);
+}
+
+/* Estilos de los modales */
+.modal-header {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.modal-title {
+  font-weight: bold;
 }
